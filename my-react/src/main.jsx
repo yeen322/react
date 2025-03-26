@@ -8,15 +8,36 @@ import ForList from "../js-example/ForList.jsx";
 import books from "../js-example/books.jsx";
 import ForFilter from "../js-example/ForFilter.jsx";
 import ForSort from "../js-example/ForSort.jsx";
+import StateBasic from "../js-example/StateBasic.jsx";
+import {Form} from "../js-example/Form.jsx";
+
 
 
 createRoot(document.getElementById('root')).render(
     <StrictMode>
         <App />
-        <MyHello myName="Yeeun"/>
-        <EventBaisc type="time"/>
+        {/*<MyHello myName="Yeeun"/>*/}
+        {/*<EventBaisc type="time"/>*/}
         {/*<ForList src ={books}/>*/}
         {/*<ForFilter src={books}/>*/}
-        <ForSort src={books}/>
+        {/*<ForSort src={books}/>*/}
+        <StateBasic/>
+        <Form/>
+
     </StrictMode>,
 )
+
+
+
+
+
+// const user = {
+//     name: "yeeun",
+//     age: 22,
+// }
+//
+// const {name,age} = user;
+//
+// const user =[ name:"yeeun", age:22];
+//
+// const {name,age} = user;
