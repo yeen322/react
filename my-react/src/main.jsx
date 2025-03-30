@@ -7,6 +7,7 @@ import TitledPanel from "../2-js-example/3/TitledPanel.jsx";
 import ListTemplate from "../2-js-example/3/ListTemplate.jsx";
 import books from "../js-example/books.jsx";
 import MyHello from "../2-js-example/3/MyHello.jsx";
+import StateParent from "../2-js-example/3/StateParent.jsx";
 
 
 // const title= <p>회원 모집 중</p>
@@ -25,7 +26,8 @@ createRoot(document.getElementById('root')).render(
     {/*            </>*/}
     {/*            )}*/}
     {/*        </ListTemplate>*/}
-    <MyHello />
+    {/*<MyHello />*/}
+        <StateParent/>
     </StrictMode>
 
 
