@@ -8,37 +8,18 @@ import ListTemplate from "../2-js-example/3/ListTemplate.jsx";
 import books from "../js-example/books.jsx";
 import MyHello from "../2-js-example/3/MyHello.jsx";
 import StateParent from "../2-js-example/3/StateParent.jsx";
+import EventMouse from "../2-js-example/3/EventMouse.jsx";
 
 
 // const title= <p>회원 모집 중</p>
 // const body = <p>리액트 세미나에 오신 것을 환영합니다</p>
 createRoot(document.getElementById('root')).render(
     <StrictMode>
-    {/*<ListTemplate src={books}>*/}
-    {/*    {elem => (*/}
-    {/*        <>*/}
-    {/*        <dt>*/}
-    {/*            <a href={`https://wikibook.co.kr/images/cover/s/${elem.isbn}.jpg`}>*/}
-    {/*                {elem.title} ({elem.price}원)*/}
-    {/*            </a>*/}
-    {/*        </dt>*/}
-    {/*        <dd>{elem.summary}< /dd>*/}
-    {/*            </>*/}
-    {/*            )}*/}
-    {/*        </ListTemplate>*/}
-    {/*<MyHello />*/}
-        <StateParent/>
+        <EventMouse
+            alt="로고 이미지"
+            beforeSrc="https://wwww.web-deli.com/image/linkbanner_l.gif"
+            afterSrc="https://www.web-deli.com/image/home_chara.gif" />
+
     </StrictMode>
 
-
 )
-// const user = {
-//     name: "yeeun",
-//     age: 22,
-// }
-//
-// const {name,age} = user;
-//
-// const user =[ name:"yeeun", age:22];
-//
-// const {name,age} = user;
