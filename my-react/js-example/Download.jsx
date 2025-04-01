@@ -1,4 +1,4 @@
-import dl_icon from '../image/dl.png';
+import dl_icon from '../public/image/dl.png';
 
 export default function Download({ slug }) {
     return (
