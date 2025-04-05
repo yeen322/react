@@ -7,6 +7,7 @@ import EventArgs2 from "../2-js-example/3/EventArgs2.jsx";
 import StateParent from "../2-js-example/3/StateParent.jsx";
 import StateBasic from "../js-example/StateBasic.jsx";
 import EventPropagation from "../2-js-example/3/Propagation.jsx";
+import EventOnce from "../2-js-example/3/EventOnce.jsx";
 
 
 
@@ -16,7 +17,8 @@ createRoot(document.getElementById('root')).render(
         {/*<EventArgs2/>*/}
         {/*<StateParent/>*/}
         {/*<StateBasic/>*/}
-        <EventPropagation/>
+        {/*<EventPropagation/>*/}
+        <EventOnce/>
     </StrictMode>
 
 )
