@@ -10,6 +10,7 @@ import MyHello from "../2-js-example/3/MyHello.jsx";
 import StateParent from "../2-js-example/3/StateParent.jsx";
 import EventMouse from "../2-js-example/3/EventMouse.jsx";
 import EventCompare from "../2-js-example/3/EventCompare.jsx";
+import StateFormUC from "../2-js-example/4/SateFormUC.jsx";
 
 
 // const title= <p>회원 모집 중</p>
@@ -20,7 +21,8 @@ createRoot(document.getElementById('root')).render(
         {/*    alt="로고 이미지"*/}
         {/*    beforeSrc="https://wwww.web-deli.com/image/linkbanner_l.gif"*/}
         {/*    afterSrc="https://www.web-deli.com/image/home_chara.gif" />*/}
-        <EventCompare/>
+        {/*<EventCompare/>*/}
+        <StateFormUC/>
 
     </StrictMode>
 
