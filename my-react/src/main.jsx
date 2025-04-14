@@ -10,6 +10,9 @@ import FormCheck from "../2-js-example/4/FormCheck.jsx";
 import FormCheckMulti from "../2-js-example/4/FormCheckMulti.jsx";
 import FormFile from "../2-js-example/4/FormFile.jsx";
 import StateNest from "../2-js-example/4/StateNest.jsx";
+import StateNestImmer from "../2-js-example/4/StateNestImmer.jsx";
+import StateNestImmer2 from "../2-js-example/4/StateNestImmer2.jsx";
+import StateTodo from "../2-js-example/4/StateTodo.jsx";
 
 createRoot(document.getElementById('root')).render(
     <StrictMode>
@@ -21,7 +24,9 @@ createRoot(document.getElementById('root')).render(
         {/*<FormCheck/>*/}
         {/*<FormCheckMulti/>*/}
         {/*<FormFile/>*/}
-        <StateNest/>
+        {/*<StateNest/>*/}
+        {/*<StateNestImmer2/>*/}
+        <StateTodo/>
     </StrictMode>
 
 )
