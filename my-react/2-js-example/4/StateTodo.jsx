@@ -1,6 +1,6 @@
 import { useState } from 'react';
+import '/src/StateTodo.css';
 
-// Todo 항목 id의 최대값(등록할 때마다 증가)
 let maxId = 0;
 export default function StateTodo() {
     // 입력값(title), 할 일 목록(todo)을 State로 관리
@@ -25,6 +25,21 @@ export default function StateTodo() {
         ]);
     };
 
+    // [완료] 버튼으로 Todo 항목을 완료 상태로 변경
+    const handleDone = e => {
+        // todo 배열을 스캔하여 id 값이 같은 것을 검색한다.
+        setTodo(todo.map(item => {
+            if (item.id === Number(e.target.dataset.id)) {
+                return {
+                    ...item,
+                    isDone: true
+                };
+            } else {
+                return item;
+            }
+        }));
+    };
+
     return (
         <div>
             <label>
@@ -34,11 +49,17 @@ export default function StateTodo() {
             </label>
             <button type="button"
                     onClick={handleClick}>추가하기</button>
-            <hr />
             {/* 할 일을 목록으로 정리하기 */}
+
             <ul>
                 {todo.map(item => (
-                    <li key={item.id}>{item.title}</li>
+                    <li key={item.id}
+                        className={item.isDone ? 'done' : ''}>
+                        {item.title}
+                        <button type="button"
+                                onClick={handleDone} data-id={item.id}>완료
+                        </button>
+                    </li>
                 ))}
             </ul>
         </div>
