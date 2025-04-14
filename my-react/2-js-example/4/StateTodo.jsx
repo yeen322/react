@@ -3,6 +3,8 @@ import '/src/StateTodo.css';
 
 let maxId = 0;
 export default function StateTodo() {
+    // 다음 정렬 방향 (내림차순인 경우 true)
+    const [desc, setDesc] = useState(true);
     // 입력값(title), 할 일 목록(todo)을 State로 관리
     const [title, setTitle] = useState('');
     const [todo, setTodo] = useState([]);
@@ -40,6 +42,30 @@ export default function StateTodo() {
         }));
     };
 
+    // [삭제] 버튼으로 해당 Todo 항목을 삭제한다.
+    const handleRemove = e => {
+        setTodo(todo.filter(item =>
+            item.id !== Number(e.target.dataset.id)
+        ));
+    };
+
+    const handleSort = e => {
+        // 기존 Todo 목록을 복제하여 정렬하기
+        const sorted = [...todo];
+        sorted.sort((m, n) => {
+            // desc 값에 따라 오름차순/내림차순 결정
+            if (desc) {
+                return n.created.getTime() - m.created.getTime();
+            } else {
+                return m.created.getTime() - n.created.getTime();
+            }
+        });
+        // desc 값 반전
+        setDesc(d => !d);
+        // 정렬된 목록 재설정
+        setTodo(sorted);
+    };
+
     return (
         <div>
             <label>
@@ -49,8 +75,13 @@ export default function StateTodo() {
             </label>
             <button type="button"
                     onClick={handleClick}>추가하기</button>
-            {/* 할 일을 목록으로 정리하기 */}
+            {/* desc 값에 따라 캡션 변경 */}
+            <button type="button"
+                    onClick={handleSort}>
+                정렬({desc ? '↑' : '↓'})</button>
+            <hr />
 
+            {/* 할 일을 목록으로 정리하기 */}
             <ul>
                 {todo.map(item => (
                     <li key={item.id}
@@ -58,6 +89,9 @@ export default function StateTodo() {
                         {item.title}
                         <button type="button"
                                 onClick={handleDone} data-id={item.id}>완료
+                        </button>
+                        <button type="button"
+                                onClick={handleRemove} data-id={item.id}>삭제
                         </button>
                     </li>
                 ))}
