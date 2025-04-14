@@ -6,6 +6,10 @@ import FormTextarea from "../2-js-example/4/FormTextarea.jsx";
 import FormSelect from "../2-js-example/4/FormSelect.jsx";
 import FormList from "../2-js-example/4/FormList.jsx";
 import FormRadio from "../2-js-example/4/FormRadio.jsx";
+import FormCheck from "../2-js-example/4/FormCheck.jsx";
+import FormCheckMulti from "../2-js-example/4/FormCheckMulti.jsx";
+import FormFile from "../2-js-example/4/FormFile.jsx";
+import StateNest from "../2-js-example/4/StateNest.jsx";
 
 createRoot(document.getElementById('root')).render(
     <StrictMode>
@@ -13,7 +17,11 @@ createRoot(document.getElementById('root')).render(
         {/*<FormTextarea/>*/}
         {/*<FormSelect/>*/}
         {/*<FormList/>*/}
-        <FormRadio/>
+        {/*<FormRadio/>*/}
+        {/*<FormCheck/>*/}
+        {/*<FormCheckMulti/>*/}
+        {/*<FormFile/>*/}
+        <StateNest/>
     </StrictMode>
 
 )
