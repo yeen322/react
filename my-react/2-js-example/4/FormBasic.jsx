@@ -11,16 +11,23 @@ export default function FormBasic() {
 
     // 폼 초기화
     const { register, handleSubmit,
-    formState: {errors} } = useForm({
+    formState: {errors,isDirty,isValid,isSubmitting} } = useForm({
         defaultValues
     });
 
     // 제출 시 처리
-    const onsubmit = data => console.log(data);
+    const onsubmit = data => {
+        return new Promise(resolve => {
+            setTimeout(() => {
+                resolve();
+                console.log(data);
+            }, 4000);
+        });
+    };
     const onerror = err => console.log(err);
 
     return (
-        <Form onSubmit={handleSubmit(onsubmit, onerror)} noValidate>
+        <form onSubmit={handleSubmit(onsubmit, onerror)} noValidate>
             {/* 검증 규칙 등을 폼에 연결 */}
             <div>
                 <label htmlFor="name">이름:</label><br/>
@@ -51,7 +58,8 @@ export default function FormBasic() {
                     <div>{errors.gender?.message}</div>
                 </div>
                 <div>
-                    <label htmlFor="emal" type="email"
+                    <label htmlFor="email">이메일 주소:</label><br/>
+                    <input id="emal" type="email"
                            {...register('emal', {
                                required: '이메일 주소는 필수 입력사항',
                                pattern: {
@@ -62,21 +70,36 @@ export default function FormBasic() {
                     <div>{errors.email?.message}</div>
                 </div>
                 <div>
-                    <label htmlFor="memo">메모:</label><br/>
+                    <label htmlFor="memo">비고:</label><br/>
                     <textarea id="memo"
                               {...register('memo', {
                                   required: '비고는 필수 입력 항목',
                                   minLength: {
                                       value: 10,
                                       message: '메모는 10자 이상으로 작성'
-                                  }
+                                  },
+                                  validate: {
+                                      ng: (value, formValues) => {
+                                          // 부적절한 단어 준비
+                                          const ngs = ['폭력','죽음','그로테스크'];
+                                          // 입력 문자열에 부적절한 단어가 포함되어 있는지 판단
+                                          for (const ng of ngs) {
+                                              if (value.includes(ng)) {
+                                                  return '비고에 적절하지 않은 단어가 포함되어 있음';
+                                              }
+                                          }
+                                          return true;
+                                      }
+                                  },
                               })} />
                     <div>{errors.memo?.message}</div>
                 </div>
+                <div>
+                    <button type="submit"
+                    disabled={!isDirty||!isValid||isSubmitting}>제출하기</button>
+                    {isSubmitting && <div>...제출 중...</div>}
+                </div>
             </div>
-            <div>
-                <button type="submit">제출하기</button>
-            </div>
-        </Form>
+        </form>
     );
 }
