@@ -18,6 +18,8 @@ import FormYup from "../2-js-example/4/FormYup.jsx";
 import FormKorean from "../2-js-example/4/FormKorean.jsx";
 import LazyBasic from "../2-js-example/5/LazyBasic.jsx";
 import LazyMulti from "../2-js-example/5/LazyMulti.jsx";
+import SuspenseSimple from "../2-js-example/5/SuspenseSimple.jsx";
+import SuspenseResult from "../2-js-example/5/SuspenseResult.jsx";
 
 
 createRoot(document.getElementById('root')).render(
@@ -37,7 +39,9 @@ createRoot(document.getElementById('root')).render(
         {/*<FormYup/>*/}
         {/*<FormKorean/>*/}
         {/*<LazyBasic/>*/}
-        <LazyMulti/>
+        {/*<LazyMulti/>*/}
+        {/*<SuspenseSimple/>*/}
+        <SuspenseResult/>
     </StrictMode>
 
 )
