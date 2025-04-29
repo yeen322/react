@@ -16,6 +16,8 @@ import StateTodo from "../2-js-example/4/StateTodo.jsx";
 import FormBasic from "../2-js-example/4/FormBasic.jsx";
 import FormYup from "../2-js-example/4/FormYup.jsx";
 import FormKorean from "../2-js-example/4/FormKorean.jsx";
+import LazyBasic from "../2-js-example/5/LazyBasic.jsx";
+import LazyMulti from "../2-js-example/5/LazyMulti.jsx";
 
 
 createRoot(document.getElementById('root')).render(
@@ -33,7 +35,9 @@ createRoot(document.getElementById('root')).render(
         {/*<StateTodo/>*/}
         {/*<FormBasic/>*/}
         {/*<FormYup/>*/}
-        <FormKorean/>
+        {/*<FormKorean/>*/}
+        {/*<LazyBasic/>*/}
+        <LazyMulti/>
     </StrictMode>
 
 )
