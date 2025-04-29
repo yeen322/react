@@ -13,6 +13,8 @@ import StateNest from "../2-js-example/4/StateNest.jsx";
 import StateNestImmer from "../2-js-example/4/StateNestImmer.jsx";
 import StateNestImmer2 from "../2-js-example/4/StateNestImmer2.jsx";
 import StateTodo from "../2-js-example/4/StateTodo.jsx";
+import FormBasic from "../2-js-example/4/FormBasic.jsx";
+import FormYup from "../2-js-example/4/FormYup.jsx";
 
 createRoot(document.getElementById('root')).render(
     <StrictMode>
@@ -26,7 +28,9 @@ createRoot(document.getElementById('root')).render(
         {/*<FormFile/>*/}
         {/*<StateNest/>*/}
         {/*<StateNestImmer2/>*/}
-        <StateTodo/>
+        {/*<StateTodo/>*/}
+        {/*<FormBasic/>*/}
+        <FormYup/>
     </StrictMode>
 
 )
